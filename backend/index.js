@@ -8,7 +8,10 @@ const app = express();
 
 /* Middleware */
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:1040', 'https://student-record-management-t1me.vercel.app'], // Add your Vercel frontend URL
+    credentials: true // if you are using cookies/sessions
+}));
 
 /* DB Connection */
 connectDB();
