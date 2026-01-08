@@ -9,7 +9,7 @@ function StudentForm({ onAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/.netlify/functions/api/api/students", {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/students`, {
         studentName,
         grade,
         subject,
