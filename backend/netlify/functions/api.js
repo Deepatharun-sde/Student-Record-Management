@@ -11,6 +11,6 @@ app.use(cors());
 
 connectDB();
 
-app.use("/api", studentRoutes);
+app.use("/api/students", studentRoutes);
 
 module.exports.handler = serverless(app);
