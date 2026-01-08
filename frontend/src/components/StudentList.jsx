@@ -12,9 +12,7 @@ function StudentList() {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/students`
-      );
+      const res = axios.get("/.netlify/functions/api/api/students");
 
       setStudents(res.data);
     } catch (err) {
@@ -29,7 +27,7 @@ function StudentList() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/students/${id}`);
+      axios.delete(`/.netlify/functions/api/api/students/${id}`);
       alert("Student deleted successfully!");
       fetchStudents(); // refresh UI
     } catch (err) {
